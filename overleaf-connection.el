@@ -530,9 +530,7 @@ https://github.com/mozilla/geckodriver/releases) to be installed."
 
 (defun overleaf--get-unix-time ()
   "Get the current unix time in seconds."
-  (let ((current-time-list nil))
-    (pcase-let ((`(,ticks . ,hz) (current-time)))
-      (/ ticks hz))))
+  (time-convert nil 'integer))
 
 (defun overleaf--get-cokies ()
   "Load the cookies either directly as a string from `overleaf-cookies` or by calling the function bound to the symbol."
